@@ -52,6 +52,7 @@ vb_player = load_model("player.d3d");
 
 vb_cube = load_model("cube.d3d");
 vb_octagon = load_model("octagon.d3d");
+vb_forcefield = load_model("forcefield.d3d");
 
 ///////////////////////////////////////////////////
 
@@ -63,21 +64,35 @@ c_shape_octagon = c_shape_create();
 c_shape_begin_trimesh();
 c_shape_load_trimesh("octagon.d3d");
 c_shape_end_trimesh(c_shape_octagon);
+c_shape_forcefield = c_shape_create();
+c_shape_begin_trimesh();
+c_shape_load_trimesh("forcefield.d3d");
+c_shape_end_trimesh(c_shape_forcefield);
 
-c_obj_cube = c_object_create(c_shape_cube, -1, 1);
+c_obj_cube = c_object_create(c_shape_cube, C_MASK_ALL, C_MASK_ALL);
 c_world_add_object(c_obj_cube);
 c_transform_position(400, 200, 0);
 c_object_apply_transform(c_obj_cube);
 c_transform_identity();
 
-c_obj_cube_2 = c_object_create(c_shape_cube, -1, 1);
+c_obj_cube_2 = c_object_create(c_shape_cube, C_MASK_ALL, C_MASK_ALL);
 c_world_add_object(c_obj_cube_2);
 c_transform_position(300, 300, 0);
 c_object_apply_transform(c_obj_cube_2);
 c_transform_identity();
 
-c_obj_octagon = c_object_create(c_shape_octagon, -1, 1);
+c_obj_octagon = c_object_create(c_shape_octagon, C_MASK_ALL, C_MASK_ALL);
 c_world_add_object(c_obj_octagon);
 c_transform_position(600, 200, 0);
 c_object_apply_transform(c_obj_octagon);
 c_transform_identity();
+
+c_obj_forcefield = c_object_create(c_shape_forcefield, C_MASK_BALL, C_MASK_BALL);
+c_world_add_object(c_obj_forcefield);
+c_transform_position(800, 0, 0);
+c_object_apply_transform(c_obj_forcefield);
+c_transform_identity();
+
+#macro C_MASK_PLAYER        0x01
+#macro C_MASK_BALL          0x02
+#macro C_MASK_ALL           C_MASK_PLAYER | C_MASK_BALL

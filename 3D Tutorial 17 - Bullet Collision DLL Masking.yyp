@@ -295,6 +295,14 @@
             }
         },
         {
+            "Key": "62194ac6-8eb3-4d50-9346-702209ba60c9",
+            "Value": {
+                "id": "80d74f27-9f23-4acd-b870-c95fd0d2bba2",
+                "resourcePath": "datafiles_yy\\forcefield.d3d.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "62f4e9b2-1aee-4ef6-8cae-8374095f7c53",
             "Value": {
                 "id": "17d0a15e-3da2-4562-979b-d30b5fb09df5",

@@ -40,3 +40,7 @@ matrix_set(matrix_world, matrix_build_identity());
 with (Ball) {
     event_perform(ev_draw, 0);
 }
+
+matrix_set(matrix_world, matrix_build(800, 0, 0, 0, 0, 0, 1, 1, 1));
+vertex_submit(vb_forcefield, pr_trianglelist, -1);
+matrix_set(matrix_world, matrix_build_identity());

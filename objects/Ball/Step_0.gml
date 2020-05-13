@@ -1,6 +1,6 @@
 zspeed -= grav;
 
-if (c_raycast_world(x, y, z, x + xspeed, y + yspeed, z + zspeed, 1)) {
+if (c_raycast_world(x, y, z, x + xspeed, y + yspeed, z + zspeed, C_MASK_BALL)) {
     xspeed = 0;
     yspeed = 0;
     zspeed = 0;
